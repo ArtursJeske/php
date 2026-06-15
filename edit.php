@@ -1,8 +1,6 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "viesu_gramata");
-if ($conn->connect_error) {
-    die("Savienojuma kļūda: " . $conn->connect_error);
-}
+require_once 'db.php';
+$conn = getConn();
 
 // Pārbauda vai ID ir derīgs
 if (!isset($_GET['id']) || !ctype_digit($_GET['id'])) {
