@@ -13,6 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = "<p class='error'>" . $messages['error_vards'] . "</p>";
     } elseif (empty($zina)) {
         $message = "<p class='error'>" . $messages['error_zina'] . "</p>";
+    } elseif (strlen($vards) > 100) {
+        $message = "<p class='error'>" . $messages['error_vards_length'] . "</p>";
     } elseif (strlen($zina) > 500) {
         $message = "<p class='error'>" . $messages['error_zina_length'] . "</p>";
     } else {
